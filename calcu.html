@@ -1,0 +1,84 @@
+<html charset="utf8">
+
+<title>exhina的简单的计算器</title>
+
+<head>
+
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		
+		alert("欢迎使用exhina的计算器\n请在window内输入正确的计算式!\n");
+		
+	});
+/*	
+	function on1(input) 
+	{
+		$("#jg").val( $("#jg").val() + input.value);
+	}
+	
+	function on2() 
+	{
+		document.getElementById("jg").value= "";
+	}
+	
+	function on3() 
+	{	
+	
+		var win = $("#jg").val();
+		var url = "/cgi-bin/calcu.exe;
+		//alert(url);	
+		//post方法 - 请求资源路径 - 携带数据 - 回调函数
+		$.post(url, {info:win}, function(data,status){
+			$("#jg").val(data);
+		});
+		
+		//$("#result").val( url );
+	}
+	
+*/
+	//获得点击状态的值
+	function on1(input) 
+	{
+		jg += input.value;
+		document.getElementById("jg").value=jg;
+	}
+	//清空结果
+	function on2() 
+	{
+		document.getElementById("jg").value= "";
+		jg = "";
+	}
+	//计算
+	function on3() 
+	{
+		document.getElementById("jg").value=eval(jg);
+	}
+
+
+
+</script>
+</head>
+<body>
+	计算窗口: <input id="jg">
+	<br>
+	<input type="button" value="1" onclick="on1(this)">
+	<input type="button" value="2" onclick="on1(this)">
+	<input type="button" value="3" onclick="on1(this)">
+	<input type="button" value="+" onclick="on1(this)"><br>
+	<input type="button" value="4" onclick="on1(this)">
+	<input type="button" value="5" onclick="on1(this)">
+	<input type="button" value="6" onclick="on1(this)">
+	<input type="button" value="-" onclick="on1(this)"><br>
+	<input type="button" value="7" onclick="on1(this)">
+	<input type="button" value="8" onclick="on1(this)">
+	<input type="button" value="9" onclick="on1(this)">
+	<input type="button" value="*" onclick="on1(this)"><br>
+	<input type="button" value="0" onclick="on1(this)">
+	<input type="button" value="C" onclick="on2()">
+	<input type="button" value="=" onclick="on3()">
+	<input type="button" value="/" onclick="on1(this)">
+</body>
+</html>
